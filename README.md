@@ -1,3 +1,18 @@
+## Student Documentation
+Original README appears below this section.
+
+This repository contains four main scripts that generate the plots enumerated below.
+<b>A shared script, <i>read_household_data</i>, is sourced in each file to read in the data. This eliminates the need to duplicate the same
+code across the four files</b>. The code to read in the data works as follows:
+# Makes a first pass through the file reading in only the first column of data to get the dates of each observation set.
+# Filters the dates based on the two days of data we're working with: 2/1/2017-2/2/2017
+# Makes a second pass through the file reading in all of the data for the observation rows that fall within the date range.
+# Modifies the resulting data frame by combining the first two columns into a single date/time field.
+
+The scripts assume the unzipped data file is available in the same directory from which the scripts are run.
+Based on the sample plots provided, all plots were generated with a transparent background.
+
+
 ## Introduction
 
 This assignment uses data from
