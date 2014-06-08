@@ -4,6 +4,7 @@ Original README appears below this section.
 This repository contains four main scripts that generate the plots enumerated below.
 <b>A shared script, <i>read_household_data</i>, is sourced in each file to read in the data. This eliminates the need to duplicate the same
 code across the four files</b>. The code to read in the data works as follows:
+
 1. Makes a first pass through the file reading in only the first column of data to get the dates of each observation set.
 2. Filters the dates based on the two days of data we're working with: 2/1/2017-2/2/2017
 3. Makes a second pass through the file reading in all of the data for the observation rows that fall within the date range.
