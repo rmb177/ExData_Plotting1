@@ -6,9 +6,8 @@ create_plot1 <- function()
     data <- read_household_data()
 
     png("plot1.png")
-    par(bg="transparent")
     
-    hist(data[,2], 
+    hist(data$globalActivePower, 
      col="red",
      main="Global Active Power",
      xlab="Global Active Power (kilowatts)")

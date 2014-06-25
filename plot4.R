@@ -7,39 +7,38 @@ create_plot4 <- function()
     data <- read_household_data()
     
     png("plot4.png")
-    par(bg="transparent")
     par(mfrow = c(2, 2))
     
-    # Create a line graph o the global active power
-    plot(two_days_clean[,1], 
-         two_days_clean[,2], 
+    # Create a line graph of the global active power
+    plot(data$dateAndTime, 
+         data$globalActivePower, 
          type="n", 
          xlab="",
          ylab="Global Active Power")
     
-    lines(two_days_clean[,1], two_days_clean[,2], type="l") 
+    lines(data$dateAndTime, data$globalActivePower, type="l") 
     
     
     # Create a line graph of the voltage
-    plot(two_days_clean[,1], 
-         two_days_clean[,4], 
+    plot(data$dateAndTime, 
+         data$voltage, 
          type="n", 
          xlab="datetime",
          ylab="Voltage")
     
-    lines(two_days_clean[,1], two_days_clean[,4], type="l")
+    lines(data$dateAndTime, data$voltage, type="l")
     
     
-    # Create a  line graph of the sum meterin data
-    plot(two_days_clean[,1], 
-         two_days_clean[,6], 
+    # Create a  line graph of the sub metering data
+    plot(data$dateAndTime, 
+         data$subMetering1, 
          type="n", 
          xlab="",
          ylab="Energy sub metering")
     
-    lines(two_days_clean[,1], two_days_clean[,6], type="l", col="black") 
-    lines(two_days_clean[,1], two_days_clean[,7], type="l", col="red")
-    lines(two_days_clean[,1], two_days_clean[,8], type="l", col="blue")
+    lines(data$dateAndTime, data$subMetering1, type="l", col="black") 
+    lines(data$dateAndTime, data$subMetering2, type="l", col="red")
+    lines(data$dateAndTime, data$subMetering3, type="l", col="blue")
     legend("topright",
            lty = 1,
            bty = "n",
@@ -47,14 +46,14 @@ create_plot4 <- function()
            col = c("black", "red", "blue"))
     
     
-    # Create a line grapy of the reactive power
-    plot(two_days_clean[,1], 
-         two_days_clean[,3], 
+    # Create a line graph of the reactive power
+    plot(data$dateAndTime, 
+         data$globalReactivePower, 
          type="n", 
          xlab="datetime",
          ylab="Global_reactive_power")
     
-    lines(two_days_clean[,1], two_days_clean[,3], type="l")
+    lines(data$dateAndTime, data$globalReactivePower, type="l")
     
     dev.off()
 }

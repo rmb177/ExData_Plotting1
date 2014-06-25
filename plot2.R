@@ -6,14 +6,13 @@ create_plot2 <- function()
     data <- read_household_data()
     
     png("plot2.png")
-    par(bg="transparent")
     
-    plot(two_days_clean[,1], 
-         two_days_clean[,2], 
+    plot(data$dateAndTime, 
+         data$globalActivePower, 
          type="n", 
          xlab="",
          ylab="Global Active Power (kilowatts)")
     
-    lines(two_days_clean[,1], two_days_clean[,2], type="l") 
+    lines(data$dateAndTime, data$globalActivePower, type="l") 
     dev.off()
 }

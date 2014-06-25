@@ -6,19 +6,18 @@ create_plot3 <- function()
     data <- read_household_data()
     
     png("plot3.png")
-    par(bg="transparent")
     
     # Create the plot frame
-    plot(two_days_clean[,1], 
-         two_days_clean[,6], 
+    plot(data$dateAndTime, 
+         data$subMetering1, 
          type="n", 
          xlab="",
          ylab="Energy sub metering")
     
     # Add the lines for the different data points
-    lines(two_days_clean[,1], two_days_clean[,6], type="l", col="black") 
-    lines(two_days_clean[,1], two_days_clean[,7], type="l", col="red")
-    lines(two_days_clean[,1], two_days_clean[,8], type="l", col="blue")
+    lines(data$dateAndTime, data$subMetering1, type="l", col="black") 
+    lines(data$dateAndTime, data$subMetering2, type="l", col="red")
+    lines(data$dateAndTime, data$subMetering3, type="l", col="blue")
     
     legend("topright",
            lty = 1,
