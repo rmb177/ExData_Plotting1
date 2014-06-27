@@ -11,7 +11,6 @@ code across the four files</b>. The code to read in the data works as follows:
 4. Modifies the resulting data frame by combining the first two columns into a single date/time field.
 
 The scripts assume the unzipped data file is available in the same directory from which the scripts are run.
-Based on the sample plots provided, all plots were generated with a transparent background.
 
 
 ## Introduction
